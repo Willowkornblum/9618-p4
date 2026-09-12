@@ -20,7 +20,7 @@ def preorder(rootnode):
         preorder(rootnode.left)
         preorder(rootnode.right)
 
-def postorder(rootnode):
+def postorder(rootnode): 
     if(rootnode != None):
         postorder(rootnode.left)
         postorder(rootnode.right)
@@ -37,6 +37,17 @@ def search (rootnode,num):
     else:
         return False 
 
+def insert (rootnode,num):
+    if (rootnode != None):
+        if (num < rootnode.data):
+            rootnode.left =  insert(rootnode.left,num)
+        elif (num> rootnode.data):
+            rootnode.right = insert(rootnode.right,num)
+        return rootnode
+    else:
+        return node(num)
+
+
 # inorder(root)
 # preorder(root)
 # postorder(root)
@@ -44,6 +55,7 @@ root = node(10)
 root.left = node(5)
 root.right = node(15)
 root.left.left = node(2)
-root.left.right= node(7)
 root.right.right= node(20)
-print (search(root,5))
+#print (search(root,5))
+print (insert(root,7))
+inorder(root)
