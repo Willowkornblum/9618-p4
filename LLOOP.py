@@ -82,9 +82,9 @@ class LL:
         while (current.next != None):
             if (current.next.data == data):
                 current.next = current.next.next
-                return
+                return 
             current = current.next
-
+        return -1 
 
 myLL = LL()
 myLL.insert_beginning('C')
